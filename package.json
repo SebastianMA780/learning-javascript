@@ -1,0 +1,13 @@
+{
+  "name": "javascript-learning",
+  "version": "1.0.0",
+  "description": "js knowledge repository",
+  "main": "index.js",
+  "scripts": {
+		"callback": "node src/callback/index.js",
+		"api-rest": "node src/api/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
