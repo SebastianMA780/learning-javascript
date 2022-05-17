@@ -4,10 +4,14 @@
   "description": "js knowledge repository",
   "main": "index.js",
   "scripts": {
-		"callback": "node src/callback/index.js",
-		"api-rest": "node src/api/index.js"
+    "callback": "node src/callback/index.js",
+    "api-rest": "node src/api-rest/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.2.4"
+  },
+	"type": "module"
 }
