@@ -18,11 +18,14 @@ Structure: they are preceded of '?' and separate with '&'.*/
 /* REQUESTING */
 import fetch from 'node-fetch';//library to simulate window.fetch in node;
 
-fetch(NASA_URL) 
-//This will return a promise with data from the server.
-//Server return an object as promise with lot of data like headers, http status etc.
-	.then(res => res.json())  //.json() will return the body as a promise with json content.
-	.then( data => console.log({ data }));
+export const initialFetch = () => {
+	fetch(NASA_URL) 
+	//This will return a promise with data from the server.
+	//Server return an object as promise with lot of data like headers, http status etc.
+		.then(res => res.json())  //.json() will return the body as a promise with json content.
+		.then( data => console.log({ data }));
+}
+
 
 /* 
 	HTTP Status code: is a message that website's server 
@@ -34,8 +37,10 @@ fetch(NASA_URL)
 // 3XX Redirection
 // 4XX Client Error
 // 5XX Server Error
-fetch(NASA_URL) 
-	.then(res => console.log({ status: res.status }));
+export const watchStatusFetch = () => {
+	fetch(NASA_URL) 
+		.then(res => console.log({ status: res.status }));
+}
 
 /* 
 	HTTP METHODS: set of request methods to indicate the 
@@ -47,11 +52,13 @@ fetch(NASA_URL)
 //put
 //patch
 //delete
-fetch(NASA_URL , {
-	method: "GET"
-}) 
-	.then(res => res.json())
-	.then( data => console.log({ dataHttpMethod: data }));
+export const getHttpMethod = () => {
+	fetch(NASA_URL , {
+		method: "GET"
+	}) 
+		.then(res => res.json())
+		.then( data => console.log({ dataHttpMethod: data }));
+}
 
 /* 
 	HTTP HEADERS: Are extra source of information of each call you make.
@@ -59,12 +66,24 @@ fetch(NASA_URL , {
 	E.x
 	'Content-Type': indicates the format of the data. ==> 'application/json';
 */
-fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}`, 
-{
-	method: "GET",
-	headers: {
-		'X-API-KEY': 'DEMO_KEY'
-	}
-}) 
-	.then(res => res.json())
-	.then( data => console.log({ apiKeyHeaderTest: data }));
+export const testingHttpHeaders = () => {
+	fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}`, 
+	{
+		method: "GET",
+		headers: {
+			'X-API-KEY': 'DEMO_KEY'
+		}
+	}) 
+		.then(res => res.json())
+		.then( data => console.log({ apiKeyHeaderTest: data }));
+}
+
+
+
+
+
+/*  Invoque any method you want to test */
+//initialFetch();
+//watchStatusFetch();
+//getHttpMethod();
+testingHttpHeaders();
