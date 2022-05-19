@@ -38,17 +38,33 @@ fetch(NASA_URL)
 	.then(res => console.log({ status: res.status }));
 
 /* 
-HTTP METHODS: set of request methods to indicate the desired action to be performed in the server.
-	//E.X
-	//get
-	//post
-	//put
-	//patch
-	//delete
+	HTTP METHODS: set of request methods to indicate the 
+	desired action to be performed in the server.
 */
+//E.X
+//get
+//post
+//put
+//patch
+//delete
 fetch(NASA_URL , {
 	method: "GET"
 }) 
 	.then(res => res.json())
 	.then( data => console.log({ dataHttpMethod: data }));
 
+/* 
+	HTTP HEADERS: Are extra source of information of each call you make.
+	Their job is to represent meta-data associated with an api request and response.
+	E.x
+	'Content-Type': indicates the format of the data. ==> 'application/json';
+*/
+fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${START_DATE}&end_date=${END_DATE}`, 
+{
+	method: "GET",
+	headers: {
+		'X-API-KEY': 'DEMO_KEY'
+	}
+}) 
+	.then(res => res.json())
+	.then( data => console.log({ apiKeyHeaderTest: data }));
