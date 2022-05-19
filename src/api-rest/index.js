@@ -26,7 +26,6 @@ export const initialFetch = () => {
 		.then( data => console.log({ data }));
 }
 
-
 /* 
 	HTTP Status code: is a message that website's server 
 	sends to the browser to indicate request state info.
@@ -78,11 +77,19 @@ export const testingHttpHeaders = () => {
 		.then( data => console.log({ apiKeyHeaderTest: data }));
 }
 
+/*  
+	CORS: 
+	-Check if a request is allowed by the server by comparing data in allow-cors-origin-header.
+	-Backend can limit with who share info.
+
+	Mode:
+	-cors
+	-no-cors: all origin can access info
+	-same-origin: only same origin can access to info.
+*/
 
 
-
-
-/*  Invoque any method you want to test */
+/*  Call any method you want to test */
 //initialFetch();
 //watchStatusFetch();
 //getHttpMethod();
