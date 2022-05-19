@@ -1,3 +1,10 @@
+ /* 
+	-> API(Application programming interface): It is a mechanism to connect two softwares to each other
+	in order to exchange messages or data in a standard format
+ -> API REST(Representational state transfer): Allows for interaction with RESTFul web services,
+ 	this interaction is made through http protocol.
+*/
+
 /* URL STRUCTURE TO MAKE API REST REQUEST */
 
 const START_DATE = '2020-01-01';
