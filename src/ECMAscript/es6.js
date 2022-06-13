@@ -1,8 +1,6 @@
 /* EcmaScript 2016 features */
 
-
 //Default params
-
 function defaultParamsFn(
 	name = 'User',
 	age = 25,
@@ -51,11 +49,21 @@ console.log(person.personName, person.age);
 const { personName, age, country } = person;
 console.log(personName, age);
 
-/* It is posible rename variables too. */
-
+	/* It is posible rename variables too with destructuring without affect original object. */
+const { personName: personName2, age: personAge2, country: personCountry2 } = person;
+console.log({
+	personName2,
+	personAge2,
+	personCountry2,
+	originalVar: person.personName
+});
 
 //spread operator
 let team1 = ['W', 'S', 'T'];
 let team2 = ['R', 'v', 'Z'];
 
-let joinTemas = [...team1, ...team2];
+let joinTeams = [...team1, ...team2, 'L', 'N'];
+
+console.log({
+	joinTeams
+})
