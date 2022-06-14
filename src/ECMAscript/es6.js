@@ -2,7 +2,7 @@
 
 /* LET, CONST */
 {
-	//allows to declare variables with block scope
+	//LET allows to us declare variables with block scope
 	let letScope = 'isAccesible?';
 	console.log({
 		letScope // in this block scope is available
@@ -19,7 +19,7 @@ console.log({
 	accesible, //defined
 })
 
-//declares a variable which can't be reassigned.
+//CONST declares a variable which can't be reassigned.
 const fixedVariable = 1
 fixedVariable = 2; //throw error, variable reassigned
 
@@ -87,7 +87,7 @@ console.log({
 });
 
 
-/* spread operator */
+/* spread operator: expand properties of an object or array */
 let team1 = ['W', 'S', 'T'];
 let team2 = ['R', 'v', 'Z'];
 
@@ -96,3 +96,19 @@ let joinTeams = [...team1, ...team2, 'L', 'N'];
 console.log({
 	joinTeams
 })
+
+const userProfile = [
+	'Sebastian',
+	28,
+	'Engineer',
+]
+
+function getUserProfile(name, age, title) {
+	console.log({
+		name,
+		age,
+		title
+	})
+}
+
+getUserProfile(...userProfile);
