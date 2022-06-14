@@ -1,6 +1,30 @@
 /* EcmaScript 2016 features */
 
-//Default params
+/* LET, CONST */
+{
+	//allows to declare variables with block scope
+	let letScope = 'isAccesible?';
+	console.log({
+		letScope // in this block scope is available
+	})
+}
+
+{
+	//var declare variables globally or with function scope
+	var accesible = 'this is accesible';
+}
+
+console.log({
+	letScope, //letScope is not defined
+	accesible, //defined
+})
+
+//declares a variable which can't be reassigned.
+const fixedVariable = 1
+fixedVariable = 2; //throw error, variable reassigned
+
+
+/* Default params */
 function defaultParamsFn(
 	name = 'User',
 	age = 25,
@@ -16,7 +40,8 @@ function defaultParamsFn(
 defaultParamsFn();
 defaultParamsFn('Sebastian', 28, 'Colombia');
 
-//Template literal
+
+/* Template literal */
 const userName = 'Willy';
 const lastName = 'Wallace';
 const prevName = userName + ' ' + lastName; //prev Versions
@@ -27,7 +52,8 @@ console.log({
 	templateName
 });
 
-//Multi line
+
+/* Multi line */
 const multilinePhrase = 'lorem phrase multiline then it will be splitted \n' +
 'this is a new line.';
 const multilinePhraseEs6 = `lorem phrase multiline then it will be splitted 
@@ -36,12 +62,14 @@ this is a new line.`;
 console.log(multilinePhrase);
 console.log(multilinePhraseEs6);
 
-//Destructuring.
+
+/* Destructuring. */
 const person = {
 	personName: 'Sebastian',
 	age: 28,
 	country: 'Colombia'
 }
+
 
 //prev versions
 console.log(person.personName, person.age);
@@ -49,7 +77,7 @@ console.log(person.personName, person.age);
 const { personName, age, country } = person;
 console.log(personName, age);
 
-	/* It is posible rename variables too with destructuring without affect original object. */
+//It is posible rename variables too with destructuring without affect original object.
 const { personName: personName2, age: personAge2, country: personCountry2 } = person;
 console.log({
 	personName2,
@@ -58,7 +86,8 @@ console.log({
 	originalVar: person.personName
 });
 
-//spread operator
+
+/* spread operator */
 let team1 = ['W', 'S', 'T'];
 let team2 = ['R', 'v', 'Z'];
 
