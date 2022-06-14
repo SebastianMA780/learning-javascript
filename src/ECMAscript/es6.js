@@ -19,9 +19,30 @@ console.log({
 	accesible, //defined
 })
 
+
 //CONST declares a variable which can't be reassigned.
 const fixedVariable = 1
 fixedVariable = 2; //throw error, variable reassigned
+
+
+/* Objects properties */
+const animal = 'Lion';
+const trainer = 'Smith';
+
+const partners = {
+	animal: animal,
+	trainer: trainer
+}; // Before Es6 this
+
+const partnersEs6 = {
+	animal,
+	trainer,
+};
+
+console.log({
+	partners,
+	partnersEs6,
+});
 
 
 /* Default params */
@@ -112,3 +133,52 @@ function getUserProfile(name, age, title) {
 }
 
 getUserProfile(...userProfile);
+
+
+/* Arrow function (Anonymous function): reduced syntax and this not binding  */
+
+const professions = [ 'Engineer' , 'Lawyer', 'Teacher', 'Doctor' ];
+
+const listingProfessions = professions.map(
+	 function (profession) { // Before Es6
+		console.log(profession)
+	}
+);
+const listingProfessionsEs6 = professions.map( 
+	(profession) => console.log(profession) //Arrow function
+);
+const listOfUser = (userName, age, country) => { /* code */ } //normal structure.
+const singleItem = age => { /* code */} //with single parameter is allowed to omit().
+export const omitReturn = num => num * 2; //this is allowed when the function only return something.
+
+/* 
+	With arrows functions there are not binding of this meanwhile in regular functions
+	this makes reference to the object who call the function. 
+*/
+
+const objThis = {
+	name: 'this',
+	call: function () {
+		console.log(this.name) // can access to objThis properties.
+	},
+	arrowCall: () => {
+		console.log(this?.name) // can not access , this is not binding.
+		console.log(this);
+	}
+}
+objThis.call();
+objThis.arrowCall();
+
+
+/* Promises, this is in replace of callbacks to handle asynchronism */
+
+const newPromise = () => {
+ return new Promise((resolve, reject) => {
+	if(true) resolve('resolved');
+	reject('wrong!')
+ })
+}
+
+newPromise()
+	.then(response => console.log(response))
+	.catch(error => console.log(error));
