@@ -1,4 +1,4 @@
-/* EcmaScript 2016 features */
+/* EcmaScript 2016 released in 2015 */
 
 /* LET, CONST */
 {
@@ -209,7 +209,7 @@ func();
 console.log(namedValue);
 
 
-/* Generators: Function that keep track of its execution */
+/* Generators: Function that keep track of its execution, it stops in every yield */
 
 function* phraseByWord() {
 	if(true) {
