@@ -179,3 +179,31 @@ const newPromise = () => {
 newPromise()
 	.then(response => console.log(response))
 	.catch(error => console.log(error));
+
+/* Classes */
+class Calculator {
+
+	constructor() {
+		this.valueA = 0;
+		this.valueB = 0;
+	}
+
+	sum(valueA, valueB) {
+		this.valueA = valueA;
+		this.valueB = valueB;
+		return this.valueA + this.valueB;
+	}
+
+}
+
+const calculator = new Calculator();
+console.log(calculator.sum(2,2));
+
+
+/* Modules: Allow to us split code in many files. */
+
+import { namedValue } from "./module-file";
+import func from "./module-file";
+
+func();
+console.log(namedValue);
