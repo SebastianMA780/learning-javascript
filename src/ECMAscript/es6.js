@@ -207,3 +207,28 @@ import func from "./module-file";
 
 func();
 console.log(namedValue);
+
+
+/* Generators: Function that keep track of its execution */
+
+function* phraseByWord() {
+	if(true) {
+		yield 'Js'
+	}
+	if(true) {
+		yield 'is'
+	}
+	if(true) {
+		yield 'amazing'
+	}
+	if(true) {
+		yield 'and everyone should learn it'
+	}
+}
+
+const phrase = phraseByWord();
+console.log(phrase.next().value)
+console.log(phrase.next().value)
+console.log(phrase.next().value)
+console.log(phrase.next().value)
+console.log(phrase.next().value) // return undefined if function ends its execution.
