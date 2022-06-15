@@ -7,7 +7,6 @@
 	=> Js set arrays type dynamic by the default
  */
 
-//Building an array like a class.
 const indexObject = {
 	'1': 1,
 	'2': 2,
@@ -15,10 +14,11 @@ const indexObject = {
 	'4': 4,
 	'5': 5,
 }
-
 console.log({
 	index: indexObject[2]
 });
+
+//Building an array like a class.
 class MyOwnArray {
 	constructor() {
 		this.length = 0;
@@ -35,13 +35,55 @@ class MyOwnArray {
 		return this.data;
 	}
 
+	pop() {
+		const index = this.length - 1;
+		if( index < 0) return; 
+		const lastItem = this.data[index];
+		delete this.data[index];
+		this.length--;
+		return lastItem;
+	}
+
+	delete(index) {
+		if(isNaN(index) | index < 0) return;
+		const item = this.data[index];
+		this.shiftIndex(index);
+		return item;
+	}
+
+	shiftIndex(index) {
+		if(isNaN(index) | index < 0) return;
+		for (let i = index; i < this.length; i++) {
+			this.data[i] = this.data[i + 1];
+		}
+		delete this.data[this.length - 1];
+		this.length--;
+	}
+
 }
 
 const users =  new MyOwnArray();
-
 users.push('firstUser');
 users.push('secondUser');
+console.log({
+	users,
+	user: users.get(1),
+});
+console.log({
+	pop: users.pop(),
+	users,
+});
+
+const animals = new MyOwnArray();
+animals.push('lion');
+animals.push('cat');
+animals.push('dog');
+animals.push('fish');
 
 console.log({
-	user: users.get(1)
-});
+	deleted: animals.delete(1),
+	animals,
+})
+
+// Construct a method delete with index reordered.
+// Construct a method unshift/shift , index are important.

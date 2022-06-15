@@ -151,11 +151,8 @@ const listOfUser = (userName, age, country) => { /* code */ } //normal structure
 const singleItem = age => { /* code */} //with single parameter is allowed to omit().
 export const omitReturn = num => num * 2; //this is allowed when the function only return something.
 
-/* 
-	With arrows functions there are not binding of this meanwhile in regular functions
-	this makes reference to the object who call the function. 
-*/
-
+	//With arrows functions there are not binding of this meanwhile in regular functions
+	//this makes reference to the object who call the function. 
 const objThis = {
 	name: 'this',
 	call: function () {
