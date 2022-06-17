@@ -102,7 +102,7 @@
 	console.log(person.personName, person.age);
 
 	const { personName, age, country } = person;
-	console.log(personName, age);
+	console.log(personName, age, country);
 
 	//It is posible rename variables too with destructuring without affect original object.
 	const { personName: personName2, age: personAge2, country: personCountry2 } = person;
