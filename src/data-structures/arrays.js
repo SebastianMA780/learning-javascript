@@ -83,7 +83,4 @@ animals.push('fish');
 console.log({
 	deleted: animals.delete(1),
 	animals,
-})
-
-// Construct a method delete with index reordered.
-// Construct a method unshift/shift , index are important.
+});
