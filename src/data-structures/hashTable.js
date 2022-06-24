@@ -1,7 +1,7 @@
 /* 
 	Hash Tables
 
-	- associative data structure (key - value) using a hash function.
+	- associative data structure (key - value) that use a hash function to address the info.
 		* This hash function is used to calculate the index where data is stored.
 			-> Data is stored in slots o buckets in the table, the number of them is arbitrary
 				and it is hash function task determine in which slot a element will be placed.
@@ -65,7 +65,7 @@
 	myHashTable.set('engineer', 29);
 	myHashTable.set('lawyer', 30);
 	myHashTable.set('doctor', 31);
-	myHashTable.set('engineer', 32);
+	myHashTable.set('engineer', 32); //keys must be unique, this should not been allowed.
 	console.log({
 		myHashTable,
 		getQuantity: [
