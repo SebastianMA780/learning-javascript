@@ -12,6 +12,10 @@
 			* each node save its value and the reference to the next node
 			* in this type of list you can only advance in it forward.
 				- So for get a previous value you need to start in the head again.
+
+		-> Doubly linked list ( two directions)
+			* each node save its value and the reference to the next and prev node.
+			* You can move forward and backward
 */
 
 export let singlyLinkedList = { //Visual reference.
@@ -99,6 +103,11 @@ console.log({
 	myLinkedList
 });
 myLinkedList.append(2);
+myLinkedList.append(3);
+myLinkedList.append(4);
+myLinkedList.append(5);
+myLinkedList.append(6);
 console.log({
-	myLinkedList: myLinkedList.prepend(0)
+	myLinkedListInsert: myLinkedList.insert(3,10),
+	myLinkedListPrepend: myLinkedList.prepend(0),
 });
