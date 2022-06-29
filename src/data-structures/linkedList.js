@@ -66,6 +66,32 @@ class SinglyLinkedList {
 		return this;
 	}
 
+	insert(index, value) {
+		if(index >= this.length) {
+			return this.append(value);
+		}
+		const node = new Node(value);
+		const firstPointer = this.getIndex(index - 1);
+		if(!firstPointer) return;
+		const holdingPointer = firstPointer.next;
+		firstPointer.next = node;
+		node.next = holdingPointer;
+		this.length++;
+		return this;
+	}
+
+	getIndex(index) {
+		if(isNaN(index)) return null;
+		let counter = 0;
+		let currentNode = this.head;
+		while (counter !== index) {
+			currentNode = currentNode.next;
+			counter++;
+		}
+
+		return currentNode;
+	}
+
 }
 
 let myLinkedList = new SinglyLinkedList(1);

@@ -11,7 +11,6 @@
 			it will be uniform too, since it will not depend on the number of items saved
 			since with the hash function we can easily obtain the index.
 
-
 	- Its main difference with objects is that a key will be 
 		converted into a hash trough a particular hash function.
 
