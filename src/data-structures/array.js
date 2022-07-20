@@ -18,7 +18,6 @@ console.log({
 	index: indexObject[2]
 });
 
-//Building an array like a class.
 class MyOwnArray {
 	constructor() {
 		this.length = 0;
