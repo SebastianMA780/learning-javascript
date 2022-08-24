@@ -44,7 +44,16 @@ class Stack {
 	}
 
 	pop() {
-		this.top 
+		if(!this.length) return;
+		const popNode = this.top;
+		if(this.length === 1) {
+			this.top = null;
+			this.bottom = null;
+		} else {
+			this.top = popNode.next;
+		}
+		this.length --;
+		return popNode
 	}
 	
 }
