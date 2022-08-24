@@ -28,6 +28,7 @@ class Stack {
 	peek() {
 		return this.top;
 	}
+
 	push(value) {
 		const newNode = new Node(value);
 		if(this.length === 0) {
@@ -41,9 +42,11 @@ class Stack {
 		this.length ++;
 		return this;
 	}
+
 	pop() {
 		this.top 
 	}
+	
 }
 
 const myStack = new Stack();
