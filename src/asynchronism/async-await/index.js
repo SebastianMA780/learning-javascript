@@ -1,11 +1,33 @@
+/* Async / await is Syntactic sugar  for promises */
 
+	function promiseMethod() {
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				resolve(true);
+			},4000);
+		});
+	}
 
+	async function asyncMethod() {
+		const response = await promiseMethod(); //await will wait for this promise be resolved.
+		console.log(response);
+	}
 
+	async function asyncMethodTryCatch() {
+		// try/catch functionality.
+		try {
+			const response = await promiseMethod();
+			console.log(response);
+			//succesful execution.
+		} catch (error) {
+			console.log(error);
+			//failure in the execution.
+			// error capture and handle.
+		}
+	}
 
-
-
-
-//Be careful when use async / await because of it could lead to bad performance as follows:
+//  WARNING!
+//  ****** Be careful when use async / await because of it could lead to bad performance as follows: ******** \\
 
 	const asyncTime = async () => {
 		const response1 = await new Promise(resolve => setTimeout(() => resolve(1), 3000));
