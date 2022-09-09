@@ -9,7 +9,8 @@
     }
 	};
 
-	* Object  Literal !== instances.
+	* Object Literal !== instances but these instances refer to those that are created by us.
+		- they are instances of js Object prototype.
 	* These object are not the same than objects in object oriented programming
 
 */
@@ -20,17 +21,50 @@
 			* Object
 			* Array
 
-	function Student() {
-		this.name = 'Name'
-		this.age = 18
-	}
-
-	const cooper = {
-		name: 'Shelly'
-		age: 20
-	}
-
-	const smith = new Student(); // prototype instance
-	// smith object is different from a object literal
+		- ** 
+			Then all objects in js are instance of one of the top prototypes.
+			This is why objects always have properties by default.
+		** -
 
 */
+
+/* Interesting fact:
+	" 
+		When we try to access a property of an object, the JavaScript engine 
+		first tries to find the property on the object, 
+		if the property is present on the object it outputs its value. But, 
+		if the property is not present on the object then it tries to find the property on 
+		the prototype object or dunder proto of the object. If the property is found 
+		the value is returned else JavaScript engine tries to find the property on the dunder proto of the object. 
+		This chain continues until the dunder proto property is null. In these cases, the output will be undefined. 
+	"
+*/
+
+function Student(name, age) { // prototype
+	this.name = name;
+	this.age = age;
+	this.yield = function() {
+		console.log('YIElD!!');
+	}
+}
+
+Student.prototype.greet = function() { //all objects in js has prototype property.
+	console.log('!!!!');
+}
+/* 	
+	although both ways of adding methods will work, there is a performance difference,
+	adding the method in the prototype function will create a copy of it in any instance so
+	it is a memory leak instead creating the method in prototype property of student 
+	it will be shared between all Student instances because of 
+	it is added to the object prototype of student.
+*/
+
+const will = { // object literal
+	name: 'Smith',
+	age: 22,
+	greet(message, name) {
+		console.log('!!!!');
+	}
+};
+
+const nath = new Student('Nath', 30);
