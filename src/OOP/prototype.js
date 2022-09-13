@@ -16,10 +16,12 @@
 */
 
 /* 
-	Prototype: 
+	Prototype: " Prototypes are the mechanism by which JavaScript objects inherit features from one another. "
 		- JavaScript has some prototypes by default.
 			* Object
 			* Array
+			* String
+			* Number
 
 		- ** 
 			Then all objects in js are instance of one of the top prototypes.
