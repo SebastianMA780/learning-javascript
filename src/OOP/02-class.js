@@ -7,7 +7,11 @@
 		JavaScript’s existing prototype-based inheritance. 
 		The class syntax does not introduce a new object-oriented inheritance model to JavaScript.
 	" 
-	https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b
+*/
+
+/* 
+	Resources:
+	- https://medium.com/@parsyval/javascript-prototype-vs-class-a7015d5473b
 */
 
 	class Student {

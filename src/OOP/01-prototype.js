@@ -1,3 +1,4 @@
+
 /* 
 
 	Object  Literal: are comma-separated list of name-value pairs inside curly braces
@@ -40,6 +41,11 @@
 		the value is returned else JavaScript engine tries to find the property on the dunder proto of the object. 
 		This chain continues until the dunder proto property is null. In these cases, the output will be undefined. 
 	"
+*/
+
+/* 
+	Resources:
+	- https://betterprogramming.pub/prototypes-in-javascript-5bba2990e04b
 */
 
 function Student(name, age) { // prototype
