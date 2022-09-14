@@ -57,21 +57,23 @@ function Student(name, age) { // prototype
 }
 
 Student.prototype.greet = function() { //all objects in js has prototype property.
-	console.log('!!!!');
+	console.log('Hi !!!!');
 }
-/* 	
+/* creation of	yield vs greet:
+
 	although both ways of adding methods will work, there is a performance difference,
 	adding the method in the prototype function will create a copy of it in any instance so
 	it is a memory leak instead creating the method in prototype property of student 
 	it will be shared between all Student instances because of 
 	it is added to the object prototype of student.
+
 */
 
 const will = { // object literal
 	name: 'Smith',
 	age: 22,
-	greet(message, name) {
-		console.log('!!!!');
+	greet() {
+		console.log('Hi !!!!');
 	}
 };
 
