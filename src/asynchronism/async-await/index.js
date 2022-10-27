@@ -23,6 +23,8 @@
 			console.log(error);
 			//failure in the execution.
 			// error capture and handle.
+		} finally {
+			//The code in the finally block will always be executed before control flow exits the entire construct.
 		}
 	}
 
