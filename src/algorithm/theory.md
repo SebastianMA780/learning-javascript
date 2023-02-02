@@ -2,18 +2,23 @@
 
 An algorithm is a well-defined sequence of steps for solving a specific problem or task. It takes inputs, performs processing with the inputs, and produces an output if necessary.
 
-## Structure of An Algorithm
-
+<details>
+  <summary>Structure of An Algorithm.</summary>
+  
 	- Inputs
 	- Processing
 	- Output (optional)
+</details>
+
+<br />
 
 <details>
-  <summary>Choosing an Algorithm</summary>
+  <summary>Choosing an Algorithm.</summary>
   
-	Choosing an algorithm is a matter of finding the best algorithm for the problem at hand. The best algorithm is the one that is the most efficient in terms of time and space complexity.
+	Choosing an algorithm is a matter of finding the best algorithm for the problem at hand.
+	The best algorithm is the one that is the most efficient in terms of time and space complexity.
 
-		- Time Complexity: How much time does it take to run the algorithm?
-		- Space Complexity: How much memory does it take to run the algorithm?
+	- Time Complexity: How much time does it take to run the algorithm?
+	- Space Complexity: How much memory does it take to run the algorithm?
 		
 </details>
