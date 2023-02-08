@@ -28,6 +28,4 @@ An algorithm is a well-defined sequence of steps for solving a specific problem 
 			- Includes the space used by variables and data structures used to store the intermediate values
 			- The auxiliary space is an important factor to consider while analyzing the efficiency of an algorithm as it directly affects the memory usage of the algorithm.
 
-
-		
 </details>
