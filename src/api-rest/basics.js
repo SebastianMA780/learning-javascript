@@ -1,6 +1,7 @@
  /* 
 	-> API(Application programming interface): It is a mechanism to connect two softwares to each other
-	in order to exchange messages or data in a standard format
+	in order to exchange messages or data in a standard format.
+
  -> API REST(Representational state transfer): Allows for interaction with RESTFul web services,
  	this interaction is made through http protocol.
 */
@@ -10,17 +11,21 @@
 const START_DATE = '2020-01-01';
 const END_DATE = '2020-01-04';
 const API_KEY = 'DEMO_KEY'; 
+
 /*
  Api keys is one of the ways to identify who is making requests.
  Authentication !== Authorization 
 */
 
-const NASA_URL = 'https://api.nasa.gov/neo/rest/v1/feed'+//this is called an endpoint,
-//it is meant to give specific info from the server.
+
+//this is called an endpoint, it is meant to give specific info from the server.
+const NASA_URL = 'https://api.nasa.gov/neo/rest/v1/feed'+
 `?start_date=${START_DATE}&end_date=${END_DATE}&api_key=${API_KEY}`;
-/* this part of url are query parameters, key values pairs 
-that contains info to filter actions of the server.
-Structure: they are preceded of '?' and separate with '&'.*/
+/* 
+	this part of url are query parameters, key values pairs 
+	that contains info to filter actions of the server.
+	Structure: they are preceded of '?' and separate with '&'.
+*/
 
 /* REQUESTING */
 import fetch from 'node-fetch';//library to simulate window.fetch in node;
@@ -43,6 +48,7 @@ export const initialFetch = () => {
 // 3XX Redirection
 // 4XX Client Error
 // 5XX Server Error
+
 export const watchStatusFetch = () => {
 	fetch(NASA_URL) 
 		.then(res => console.log({ status: res.status }));
@@ -51,13 +57,14 @@ export const watchStatusFetch = () => {
 /* 
 	HTTP METHODS: set of request methods to indicate the 
 	desired action to be performed in the server.
+
+	- get
+	- post
+	- put
+	- patch
+	- delete
 */
-//E.X
-//get
-//post
-//put
-//patch
-//delete
+
 export const getHttpMethod = () => {
 	fetch(NASA_URL , {
 		method: "GET"
