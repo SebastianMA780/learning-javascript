@@ -15,5 +15,11 @@
     "node-fetch": "^3.2.4",
     "xmlhttprequest": "^1.8.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+	"eslintConfig": {
+		"extends": "standard"
+	}
 }
