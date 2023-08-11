@@ -41,18 +41,33 @@ function debounce (cb, delay = 1000) {
 Throttle is a technique that controls the rate at which a function is executed.
 ensuring the function is executed at regular intervals.
 */
-function throttle (cb, delay = 1000) {
+function throttle (cb, delay = 200) {
   let shouldWait = false
+  let waitingArgs = null
+  let timeout
+
+  const timeoutFn = () => {
+    if (waitingArgs === null) {
+      shouldWait = false
+    } else {
+      // eslint-disable-next-line n/no-callback-literal
+      cb(...waitingArgs)
+      waitingArgs = null
+      setTimeout(timeoutFn, delay)
+    }
+  }
 
   return (...args) => {
-    if (shouldWait) return
+    if (shouldWait) {
+      waitingArgs = args
+      return
+    }
     // eslint-disable-next-line n/no-callback-literal
     cb(...args)
     shouldWait = true
-    setTimeout(() => {
-      shouldWait = false
-    }
-    , delay)
+
+    clearTimeout(timeout) // Clear the timeout before setting a new one
+    timeout = setTimeout(timeoutFn, delay)
   }
 }
 
