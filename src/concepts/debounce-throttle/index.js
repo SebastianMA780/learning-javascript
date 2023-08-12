@@ -17,8 +17,8 @@ window.addEventListener('mousemove', _e => {
 })
 
 /*
-Debounce is a technique that is used to control how often a function is called.
-when a certain event is triggered.
+Debounce delays the execution of a function until a certain period of inactivity
+has passed after the last event, helping to prevent multiple rapid function calls.
 -- Debounce -- works by delaying the execution until
 after the event has stopped firing for a specified amount of time.
 */
