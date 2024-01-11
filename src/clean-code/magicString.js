@@ -1,3 +1,6 @@
+// Magic string is 'error' used hard-coded in the function printMessage, this is not reusable and not easy to change.
+// instead you should use different strategy like enum or object.
+
 export const MESSAGE_TYPE = Object.freeze({ // freeze to make sure no one can change the value
   ERROR: 'error',
   WARNING: 'warning',
@@ -5,8 +8,6 @@ export const MESSAGE_TYPE = Object.freeze({ // freeze to make sure no one can ch
 })
 
 function printMessage (message) {
-  // Magic string is 'error' used hard-coded, this is not reusable and not easy to change.
-  // instead you should use different strategy like enum or object.
   if (message === 'error') {
     console.log('Error')
   } else if (message === MESSAGE_TYPE.WARNING) {
